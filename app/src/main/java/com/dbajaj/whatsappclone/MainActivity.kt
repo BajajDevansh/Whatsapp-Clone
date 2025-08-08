@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.dbajaj.whatsappclone.navigation.Navigation
 import com.dbajaj.whatsappclone.ui.theme.WhatsappCloneTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +21,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             WhatsappCloneTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Navigation(Modifier.padding(innerPadding))
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    WhatsappCloneTheme {
-        Greeting("Android")
-    }
-}
