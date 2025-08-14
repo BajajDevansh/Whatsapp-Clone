@@ -24,4 +24,7 @@ sealed class Routes {
     @Serializable
     data object Calls : Routes()
 
+    @Serializable
+    data object UserProfile : Routes()
+
 }
