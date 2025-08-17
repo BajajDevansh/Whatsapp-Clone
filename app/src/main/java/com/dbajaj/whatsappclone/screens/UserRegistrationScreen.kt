@@ -174,21 +174,22 @@ fun UserRegistrationScreen(
                             )
                         )
                         Spacer(Modifier.height(16.dp))
-                        Button(onClick = {
-                            if(phoneNumber.isNotEmpty()){
-                                val phone="$countryCode$phoneNumber"
-                                viewModel.sendVerificationCode(phone,activity)
 
-                            }
-                            else{
-                                Toast.makeText(context,"Enter Phone Number",Toast.LENGTH_SHORT).show()
-                            }
-                        }, shape = RoundedCornerShape(6.dp),
-                            colors = ButtonDefaults.buttonColors(
-                                colorResource(R.color.dark_green)
-                            )){
-                            Text("Send OTP")
+                    }
+                    Button(onClick = {
+                        if(phoneNumber.isNotEmpty()){
+                            val phone="$countryCode$phoneNumber"
+                            viewModel.sendVerificationCode(phone,activity)
+
                         }
+                        else{
+                            Toast.makeText(context,"Enter Phone Number",Toast.LENGTH_SHORT).show()
+                        }
+                    }, shape = RoundedCornerShape(6.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            colorResource(R.color.dark_green)
+                        )){
+                        Text("Send OTP")
                     }
                     if(authState is AuthState.Loading){
                         Spacer(Modifier.height(16.dp))

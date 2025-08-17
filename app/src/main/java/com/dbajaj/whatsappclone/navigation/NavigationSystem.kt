@@ -10,6 +10,7 @@ import com.dbajaj.whatsappclone.screens.CommunitiesScreen
 import com.dbajaj.whatsappclone.screens.HomeScreen
 import com.dbajaj.whatsappclone.screens.SplashScreen
 import com.dbajaj.whatsappclone.screens.UpdatesScreen
+import com.dbajaj.whatsappclone.screens.UserProfileScreen
 import com.dbajaj.whatsappclone.screens.UserRegistrationScreen
 import com.dbajaj.whatsappclone.screens.WelcomeScreen
 
@@ -38,6 +39,9 @@ fun Navigation(modifier: Modifier = Modifier) {
         }
         composable<Routes.Calls> {
             CallsScreen()
+        }
+        composable<Routes.UserProfile> {
+            UserProfileScreen(navController = navController)
         }
     }
 }

@@ -179,14 +179,14 @@ fun HomeScreen(){
 }
 
 @Composable
-fun ChatView(image:Painter, name:String, time:String,message:String){
+fun ChatView(image:Int?, name:String?, time:String?,message:String?){
     Column {
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = image,
+                painter = painterResource(image?:R.drawable.outline_account_circle_24),
                 contentDescription = null,
                 modifier = Modifier
                     .size(60.dp)
@@ -200,10 +200,10 @@ fun ChatView(image:Painter, name:String, time:String,message:String){
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(name, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                    Text(time, fontSize = 12.sp, color = Color.Gray,modifier = Modifier.padding(end = 16.dp))
+                    Text(name!!, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                    Text(time!!, fontSize = 12.sp, color = Color.Gray,modifier = Modifier.padding(end = 16.dp))
                 }
-                Text(message)
+                Text(message!!)
             }
 
         }
